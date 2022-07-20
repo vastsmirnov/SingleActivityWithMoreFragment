@@ -13,29 +13,28 @@ import org.koin.core.parameter.parametersOf
 class SecondFragment: Fragment() {
     private val count: Int by requireExtra(COUNT)
 
-    private val vm: ViewModel by viewModel {
-        parametersOf(
-            count
-        )
+    private val viewModel: ViewModel by viewModel {
+        parametersOf(count)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentSecondBinding.inflate(
             inflater,
             container,
             false
         )
 
-        vm.liveData.observe(viewLifecycleOwner) {
-            binding.tvff.text = it.toString()
+        viewModel.navigateCounterLiveData.observe(viewLifecycleOwner) {
+            binding.navigateCounterTextView.text = it.toString()
         }
 
         binding.apply {
-            bff.setOnClickListener {
-                val firstFragment = FirstFragment.newInstance(tvff.text.toString().toInt().inc())
+            buttonNavigateToFirstFragment.setOnClickListener {
+                val count: Int = navigateCounterTextView.text.toString().toInt().inc()
+                val firstFragment = FirstFragment.newInstance(count)
                 parentFragmentManager.beginTransaction()
                     .addToBackStack(null)
                     .replace(R.id.fragmentContainerView, firstFragment)

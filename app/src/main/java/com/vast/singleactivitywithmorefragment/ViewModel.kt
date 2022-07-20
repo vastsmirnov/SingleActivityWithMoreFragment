@@ -5,11 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ViewModel(val count: Int): ViewModel() {
-    private val _liveData: MutableLiveData<Int> = MutableLiveData(0)
+    private val _navigateCounterLiveData: MutableLiveData<Int> = MutableLiveData(0)
 
-    val liveData = _liveData as LiveData<Int>
+    val navigateCounterLiveData = _navigateCounterLiveData as LiveData<Int>
 
     init {
-        _liveData.value = count
+        _navigateCounterLiveData.value = count
     }
 }

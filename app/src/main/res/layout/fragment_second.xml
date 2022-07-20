@@ -15,31 +15,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="228dp"
-            android:text="Second fragment!"
+            android:text="@string/second_fragment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/bff"
+            android:id="@+id/button_navigate_to_first_fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="33dp"
-            android:text="to first fragment"
+            android:text="@string/to_first_fragment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sf" />
 
         <TextView
-            android:id="@+id/tvff"
+            android:id="@+id/navigate_counter_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="38dp"
             android:minWidth="48dp"
             android:minHeight="48dp"
-            android:text="0"
-            app:layout_constraintEnd_toEndOf="@+id/bff"
-            app:layout_constraintStart_toStartOf="@+id/bff"
-            app:layout_constraintTop_toBottomOf="@+id/bff" />
+            app:layout_constraintEnd_toEndOf="@+id/button_navigate_to_first_fragment"
+            app:layout_constraintStart_toStartOf="@+id/button_navigate_to_first_fragment"
+            app:layout_constraintTop_toBottomOf="@+id/button_navigate_to_first_fragment" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
